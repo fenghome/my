@@ -1,14 +1,15 @@
 # coding:utf-8
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 
 from blog.models import Users
 
 
 def admin(request,controller,action):
     exec 'from blog.controller.Admin.'+controller+'Controller import '+controller+'Controller'
-    exec 'c = '+controller+'Controller()'
+    exec 'c = '+controller+'Controller(request)'
     exec 'res = c.'+action+'()'
     return res
+
 
 def blog(request):
     return render(request,'Blog/index.html')

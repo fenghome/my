@@ -5,7 +5,7 @@
 
         <title>栏目列表</title>
 
-        <link href="../../static/Houtai/css/mine.css" type="text/css" rel="stylesheet" />
+        <link href="../../../static/Houtai/css/mine.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <style>
@@ -15,7 +15,7 @@
             <span>
                 <span style="float: left;">当前位置是：网站管理-》栏目列表</span>
                 <span style="float: right; margin-right: 8px; font-weight: bold;">
-                    <a style="text-decoration: none;" href="{% url 'ht_addColumn' %}">【添加栏目】</a>
+                    <a style="text-decoration: none;" href="/admin/Column/addColumn/">【添加栏目】</a>
                 </span>
             </span>
         </div>
@@ -31,7 +31,7 @@
                     <tr id="product1">
                         <td>1</td>
                         <td><a href="#">苹果（APPLE）iPhone 4S</a></td>
-                        <td><a href="{% url 'ht_editColumn' %}">修改</a></td>
+                        <td><a href="/admin/Column/editColumn/">修改</a></td>
                         <td><a href="javascript:;" onclick="delete_product(1)">删除</a></td>
                     </tr>
 

@@ -5,7 +5,7 @@
 
         <title>文章列表</title>
 
-        <link href="../../static/Houtai/css/mine.css" type="text/css" rel="stylesheet" />
+        <link href="../../../static/Houtai/css/mine.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
         <style>
@@ -15,7 +15,7 @@
             <span>
                 <span style="float: left;">当前位置是：网站管理-》文章列表</span>
                 <span style="float: right; margin-right: 8px; font-weight: bold;">
-                    <a style="text-decoration: none;" href="{% url 'ht_addArticle' %}">【添加文章】</a>
+                    <a style="text-decoration: none;" href="/admin/Article/addArticle/">【添加文章】</a>
                 </span>
             </span>
         </div>
@@ -35,10 +35,10 @@
                         <td>1</td>
                         <td><a href="#">苹果（APPLE）iPhone 4S</a></td>
                         <td>100</td>
-                        <td><img src="../../static/Houtai/img/20121018-174034-58977.jpg" height="60" width="60"></td>
+                        <td><img src="../../../static/Houtai/img/20121018-174034-58977.jpg" height="60" width="60"></td>
                         <td>苹果apple</td>
                         <td>2012-10-18 17:40:34</td>
-                        <td><a href="{% url 'ht_editArticle' %}">修改</a></td>
+                        <td><a href="/admin/Article/editArticle/">修改</a></td>
                         <td><a href="javascript:;" onclick="delete_product(1)">删除</a></td>
                     </tr>
                     <tr>

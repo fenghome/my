@@ -1,13 +1,14 @@
 # coding:utf-8
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
+from blog.controller.Admin.LoginController import LoginController
 
 __author__ = 'Administrator'
-class IndexController:
+class IndexController(LoginController):
     def index(self):
-        return render_to_response('Admin/index/index.html')
+        return render(self.request,'admin/index/index.html')
     def head(self):
-        return render_to_response('Admin/index/head.html')
+        return render(self.request,'admin/index/head.html')
     def left(self):
-        return render_to_response('Admin/index/left.html')
+        return render(self.request,'admin/index/left.html')
     def right(self):
-        return render_to_response('Admin/index/right.html')
+        return render(self.request,'admin/index/right.html')

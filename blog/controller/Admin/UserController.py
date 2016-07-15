@@ -1,11 +1,12 @@
 # coding:utf-8
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
+from blog.controller.Admin.LoginController import LoginController
 
 __author__ = 'Administrator'
-class UserController:
+class UserController(LoginController):
     def addUser(self):
-       return render_to_response('Admin/User/addUser.html')
+       return render(self.request,'admin/User/addUser.html')
     def editUser(self):
-       return render_to_response('Admin/User/editUser.html')
+       return render(self.request,'admin/User/editUser.html')
     def showUser(self):
-       return render_to_response('Admin/User/showUser.html')
+       return render(self.request,'admin/User/showUser.html')
