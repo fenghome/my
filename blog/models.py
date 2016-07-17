@@ -9,6 +9,10 @@ class Users(models.Model):
     username = models.CharField(db_column='userName', max_length=50)  # Field name made lowercase.
     userpassword = models.CharField(db_column='userPassword', max_length=60)  # Field name made lowercase.
 
+    def __unicode__(self):
+        return self.username
+    def getUserId(self):
+        return self.userid
     class Meta:
         db_table = 'users'
 

@@ -25,19 +25,22 @@
                                     <ul>
                                         <li class="user_main_text">用户名： </li>
                                         <li class="user_main_input">
-                                            <input class="TxtUserNameCssClass" id="admin_user" maxlength="20" name="admin_user"> </li></ul>
-                                    <ul>
-                                        <li class="user_main_text">密&nbsp;&nbsp;&nbsp;&nbsp;码： </li>
-                                        <li class="user_main_input">
-                                            <input class="TxtPasswordCssClass" id="admin_psd" name="admin_psd" type="password">
+                                            <input class="TxtUserNameCssClass" id="admin_user" maxlength="20" name="username">
                                         </li>
                                     </ul>
                                     <ul>
-                                        <li class="user_main_text">验证码： </li>
+                                        <li class="user_main_text">密&nbsp;&nbsp;&nbsp;&nbsp;码： </li>
                                         <li class="user_main_input">
-                                            <input class="TxtValidateCodeCssClass" id="captcha" name="captcha" type="text">
-                                            <img src="../../../static/Houtai/img/admin.png"  alt="" />
+                                            <input class="TxtPasswordCssClass" id="admin_psd" name="userpass" type="password">
                                         </li>
+                                    </ul>
+                                    <ul>
+                                        <li>{{ tishi }}</li>
+{#                                        <li class="user_main_text">验证码： </li>#}
+{#                                        <li class="user_main_input">#}
+{#                                            <input class="TxtValidateCodeCssClass" id="captcha" name="captcha" type="text">#}
+{#                                            <img src="../../../static/Houtai/img/admin.png"  alt="" />#}
+{#                                        </li>#}
                                     </ul>
                                 </div>
                             </li>
@@ -47,11 +50,19 @@
                             </li>
                         </ul>
                     </form>
-                </dd><dd id="user_bottom">
+                </dd>
+                <dd id="user_bottom">
                     <ul>
                         <li class="user_bottom_l"></li>
                         <li class="user_bottom_c"><span style="margin-top: 40px;"></span> </li>
-                        <li class="user_bottom_r"></li></ul></dd></dl></div><span id="ValrUserName" style="display: none; color: red;"></span><span id="ValrPassword" style="display: none; color: red;"></span><span id="ValrValidateCode" style="display: none; color: red;"></span>
+                        <li class="user_bottom_r"></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <span id="ValrUserName" style="display: none; color: red;"></span>
+        <span id="ValrPassword" style="display: none; color: red;"></span>
+        <span id="ValrValidateCode" style="display: none; color: red;"></span>
         <div id="ValidationSummary1" style="display: none; color: red;"></div>
     </body>
 </html>

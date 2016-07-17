@@ -1,59 +1,20 @@
 # coding:utf-8
+from django.core.urlresolvers import reverse
+from django.http.response import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, render_to_response
+from blog.controller.Admin.LoginController import LoginController
 
 from blog.models import Users
 
 
 def admin(request,controller,action):
+    # 先检查是否已经登录，如果没有登录，调用LoginController的login方法
+    if request.session.get('username') is None:
+        c = LoginController(request)
+        return c.login()
+    # 根据传进来的控制器和操作动态调用相应的controller
     exec 'from blog.controller.Admin.'+controller+'Controller import '+controller+'Controller'
     exec 'c = '+controller+'Controller(request)'
     exec 'res = c.'+action+'()'
     return res
 
-
-def blog(request):
-    return render(request,'Blog/index.html')
-
-def login(request):
-    return render(request, 'Admin/login.html')
-
-
-def head(request):
-    user = Users.objects.get(userid = '1')
-    return render(request, 'Admin/Index/head.html',{"user":user})
-#
-# def left(request):
-#     return render(request, 'houtai/left.html')
-#
-# def right(request):
-#     return render(request, 'houtai/right.html')
-#
-# def showUser(request):
-#     return render(request, 'houtai/showUser.html')
-#
-# def showColumn(request):
-#     return render(request, 'houtai/showColumn.html')
-#
-# def showArticles(request):
-#     return render(request, 'houtai/showArticles.html')
-#
-# def addUser(request):
-#     return render(request, 'houtai/addUser.html')
-#
-# def editPass(request):
-#     return render(request, 'houtai/editPass.html')
-#
-# def addColumn(request):
-#     return render(request, 'houtai/addColumn.html')
-#
-# def addArticle(request):
-#     return render(request, 'houtai/addArticle.html')
-#
-# def editUser(request):
-#     return render(request, 'houtai/editUser.html')
-#
-# def editColumn(request):
-#     return render(request, 'houtai/editColumn.html')
-#
-# def editArticle(request):
-#     return render(request, 'houtai/editArticle.html')
