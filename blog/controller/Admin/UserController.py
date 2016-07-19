@@ -61,5 +61,6 @@ class UserController(Controller):
 
     def delUser(self):
         username = self.request.GET.get('username')
-
-        return HttpResponse(username)
+        user = Users.objects.get(username = username)
+        user.delete()
+        return self.showUser()
