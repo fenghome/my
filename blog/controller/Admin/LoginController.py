@@ -22,7 +22,6 @@ class LoginController(Controller):
                     # return HttpResponseRedirect(reverse('ht', args=('Index','index')))
                     return render(self.request,'admin/Index/index.html')
             else:
-                print 'gggggkfdgjkdfsgdfkgfdkgdfgfdgfdg'
                 return render(self.request,'admin/Login/login.html')
 
     def logout(self):
