@@ -31,16 +31,18 @@
                         <td>创建时间</td>
                         <td align="center">操作</td>
                     </tr>
+                    {% for article in articles %}
                     <tr id="product1">
-                        <td>1</td>
-                        <td><a href="#">苹果（APPLE）iPhone 4S</a></td>
-                        <td>100</td>
+                        <td>{{ article.articleid }}</td>
+                        <td><a href="#">{{ article.articlename }}</a></td>
+                        <td>{{ article.articleauther }}</td>
                         <td><img src="../../../static/Houtai/img/20121018-174034-58977.jpg" height="60" width="60"></td>
-                        <td>苹果apple</td>
-                        <td>2012-10-18 17:40:34</td>
+                        <td>{{ article.articlecolumm }}</td>
+                        <td>{{ article.articletime }}</td>
                         <td><a href="/admin/Article/editArticle/">修改</a></td>
                         <td><a href="javascript:;" onclick="delete_product(1)">删除</a></td>
                     </tr>
+                    {% endfor %}
                     <tr>
                         <td colspan="20" style="text-align: center;">
                             [1]

@@ -42,3 +42,9 @@ class ColumnController(Controller):
             return self.showColumn()
         else:
             return render(self.request,'admin/Column/addColumn.html')
+
+    #删除栏目
+    def delColumn(self):
+        colName = self.request.GET.get('colName')
+        Columns.objects.get(colname = colName).delete()
+        return self.showColumn()

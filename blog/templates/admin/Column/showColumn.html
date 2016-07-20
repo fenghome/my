@@ -35,7 +35,7 @@
                         <td>{{ column.colid }}</td>
                         <td><a href="#">{{ column.colname }}</a></td>
                         <td><a href="/admin/Column/editColumn/?colName={{ column.colname }}">修改</a></td>
-                        <td><a href="javascript:;" onclick="delete_product(1)">删除</a></td>
+                        <td><a href="/admin/Column/delColumn/?colName={{ column.colname }}" onclick="return confirm('确定要删除此用户吗？');">删除</a></td>
 
                     </tr>
                     {% endfor %}
